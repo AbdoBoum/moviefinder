@@ -1,17 +1,16 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from "redux";
 
 import Navbar from "./layout/Navbar";
+import Index from "./layout/Index";
 
 class App extends React.Component {
     render() {
+
         return (
-            <Provider>
-                <React.Fragment>
-                    <Navbar/>
-                </React.Fragment>
-            </Provider>
+            <React.Fragment>
+                <Navbar/>
+                <Index/>
+            </React.Fragment>
         );
     }
 }
