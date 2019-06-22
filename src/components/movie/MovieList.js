@@ -31,7 +31,7 @@ class MovieList extends React.Component{
 };
 
 const mapStateToProps = state => {
-  return {movies: state.movies}
+  return {movies: state.movies, selectedMovie: state.selectedMovie}
 };
 
 export default connect(mapStateToProps, {fetchTrendingMovies})(MovieList);

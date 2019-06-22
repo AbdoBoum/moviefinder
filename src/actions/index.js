@@ -13,3 +13,15 @@ export const fetchTrendingMovies = () => async dispatch => {
         payload: response.data.results
     })
 };
+
+export const fetchMovie = id => async dispatch => {
+  const response = await themoviedb.get(`/movie/${id}`, {
+      params: {
+          api_key: API_KEY
+      }
+  });
+  dispatch({
+      type: 'FETCH_MOVIE',
+      payload: response.data
+  })
+};
