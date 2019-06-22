@@ -21,7 +21,20 @@ export const fetchMovie = id => async dispatch => {
       }
   });
   dispatch({
-      type: 'FETCH_MOVIE',
+      type: 'FETCH_MOVIE_BY_ID',
       payload: response.data
   })
+};
+
+export const fetchMovieByQuery = query => async dispatch => {
+    const response = await themoviedb.get("/search/movie", {
+        params: {
+            api_key: API_KEY,
+            query: query
+        }
+    });
+    dispatch({
+        type: 'FETCH_MOVIE_BY_QUERY',
+        payload: response.data
+    })
 };
