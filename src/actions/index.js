@@ -35,6 +35,6 @@ export const fetchMovieByQuery = query => async dispatch => {
     });
     dispatch({
         type: 'FETCH_MOVIE_BY_QUERY',
-        payload: response.data
+        payload: response.data.results
     })
 };
