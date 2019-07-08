@@ -6,6 +6,9 @@ import MovieItem from "./MovieItem";
 import Spinner from '../layout/Spinner';
 
 class MovieList extends React.Component{
+
+    state = {page: 2};
+
     componentDidMount() {
         this.props.fetchTrendingMovies();
     }
@@ -19,6 +22,11 @@ class MovieList extends React.Component{
       })
     };
 
+    loadMore = () => {
+        this.props.fetchTrendingMovies(this.state.page);
+        this.setState({page: this.state.page + 1});
+    };
+
     render() {
         const {movies} = this.props;
         console.log(movies);
@@ -28,10 +36,10 @@ class MovieList extends React.Component{
             </div>
         );
     }
-};
+}
 
 const mapStateToProps = state => {
-  return {movies: state.movies, selectedMovie: state.selectedMovie}
+  return {movies: state.movies}
 };
 
 export default connect(mapStateToProps, {fetchTrendingMovies})(MovieList);

@@ -1,11 +1,11 @@
 import themoviedb, {API_KEY} from '../api/themoviedb';
 
 
-export const fetchTrendingMovies = () => async dispatch => {
+export const fetchTrendingMovies = (page=1) => async dispatch => {
     const response = await themoviedb.get('/trending/movie/week', {
         params: {
             api_key: API_KEY,
-            page: 1
+            page: page
         }
     });
     dispatch({

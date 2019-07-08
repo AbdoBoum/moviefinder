@@ -1,11 +1,15 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
-const Navbar = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-            <span className="navbar-brand mb-0 h1 mx-auto">THE MOVIE DB</span>
-        </nav>
-    );
-};
+class Navbar extends React.Component{
+
+    render() {
+        return (
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+                <Link to="/" className="navbar-brand mb-0 h1 mx-auto">THE MOVIE DB</Link>
+            </nav>
+        );
+    }
+}
 
 export default Navbar;
