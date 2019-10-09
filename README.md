@@ -2,6 +2,10 @@
 
 App that finds movies using React and TMDb API.
 
+## Live preview
+
+<a href="https://app-movie-finder.herokuapp.com/">Click here.</a>
+
 ## TMDb API
 
 https://developers.themoviedb.org
